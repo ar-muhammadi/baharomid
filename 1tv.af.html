@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1TV.AF</title>
+
+	<style type="text/css">
+		body {
+			font-size: 22px;
+			line-height: 32px;
+			color: #fff;
+			margin: 0;
+			padding: 0;
+			word-wrap: break-word !important;
+			font-family: "robot", sans-serif;
+		}
+		.container {
+			max-width: 1100px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		nav {
+			background-color: #092f50;
+		}
+		a {
+			color: white;
+		}
+		.toggle, [id^=drop] {
+			display: none;
+		}
+		.logo img {
+			width: 40px;
+			float: left;
+			margin-top: 10px;
+			/*display: block;
+			padding: 0 30px;
+			float: left;
+			font-size: 20px;
+			line-height: 60px;*/
+		}
+		#main-toggle {
+			cursor: pointer;
+			float: right;
+			padding: 28px 20px;
+			position: relative;
+			user-select: none;
+		}
+		.nav-icon {
+			background: #FFF;
+			display: block;
+			height: 2px;
+			width: 18px;
+			position: relative;
+		}
+		.nav-icon:before,
+		.nav-icon:after {
+			background: #FFF;
+			content: " ";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+		.nav-icon:before {
+			top: 5px;
+		}
+		.nav-icon:after {
+			top: -5px;
+		}
+		nav:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		nav ul {
+			float: left;
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		nav ul li {
+			margin: 0;
+			float: left;
+			background-color: #092f50;
+		}
+		nav ul li a:hover {
+			background-color: #000;
+		}
+		nav a {
+			display: block;
+			padding: 0 20px;
+			color: white;
+			font-size: 20px;
+			line-height: 60px;
+			text-decoration: none;
+		}
+		nav ul li ul li:hover {
+			background-color: #000;
+		}
+		nav ul ul {
+			display: none;
+			position: absolute;
+			top: 60px;
+		}
+		nav ul ul li {
+			width: 210px;
+			float: none;
+			display: list-item;
+			position: relative;
+		}
+		nav ul ul ul li {
+			position: relative;
+			top: -60px;
+			left: 210px;
+		}
+		nav ul li:hover>ul {
+			display: inherit;
+		}
+		li>a:after {
+			content: " +" !important;
+		}
+		li>a:only-child:after {
+			content: "" !important;
+		}
+		@media all and (max-width: 786px) {
+			nav {
+				margin: 0;
+			}
+			.logo img {
+				margin-left: 20px;
+			}
+			nav ul {
+				float: none;
+			}
+			.toggle+a,
+			.menu {
+				display: none;
+			}
+			.toggle {
+				display: block;
+				padding: 0 20px;
+				color: white;
+				font-size: 28px;
+				line-height: 60px;
+				text-decoration: none;
+				border: none;
+			}
+			ul li .toggle:hover {
+				background-color: #000;
+			}
+			[id^=drop]:checked+ul{
+				display: block !important;
+			}
+			nav ul li {
+				display: block;
+				width: 100%;
+			}
+			nav ul li .toggle,
+			nav ul li a {
+				padding: 0 20px;
+				font-size: 20px;
+			}
+			nav ul ul ul a {
+				padding: 0 60px;
+				background-color: #141625;
+				border-left: 1px solid #fff;
+			}
+			nav ul li ul li .toggle,
+			nav ul ul a {
+				background-color: #1f243b;
+				border-left: 1px solid #fff;
+			}
+			nav ul ul {
+				float: none;
+				position: static;
+				color: white;
+			}
+			nav ul ul li:hover>ul,
+			nav ul li:hover>ul {
+				display: none;
+			}
+			nav ul ul li {
+				display: block;
+				width: 100%;
+			}
+			nav ul ul ul li {
+				position: static;
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="container">
+			<div class="logo">
+				<img src="1tvlogo.png" alt="logo">
+			</div>
+			<!-- <div id="logo">LOGO</div> -->
+			<label for="drop" class="toggle" id="main-toggle">
+			 	<span class="nav-icon"></span>
+			</label>
+			<input type="checkbox" id="drop">
+			<ul class="menu">
+				<li><a href="#">Home</a></li>
+				<li>
+					<!-- First Tier Drop Dwon -->
+					<label for="drop-2" class="toggle">TV Show +</label>
+					<a href="#">TV Show</a>
+					<input type="checkbox" id="drop-2">
+					<ul>
+						<li><a href="">Salam Zinday</a></li>
+						<li><a href="">Eqra</a></li>
+						<li><a href="">Cooking Show</a></li>
+						<li><a href="">Qurantine</a></li>
+						<li>
+							<!-- Second Tire Drop Down -->
+							<label for="drop-3" class="toggle">Archive +</label>
+							<a href="#">Archive</a>
+							<input type="checkbox" id="drop-3">
+							<ul>
+								<li><a href="">Man ya To</a></li>
+								<li><a href="">Shabkhand</a></li>
+								<li><a href="">Pozkhand</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<!-- First Tier Drop Dwon -->
+					<label for="drop-2" class="toggle">Current Affairs +</label>
+					<a href="#">Current Affairs</a>
+					<input type="checkbox" id="drop-2">
+					<ul>
+						<li><a href="">Morning Magazine</a></li>
+						<li><a href="">Pashto News</a></li>
+						<li><a href="">Dari News</a></li>
+						<li><a href="">News % Analysis</a></li>
+						<li>
+							<!-- Second Tire Drop Down -->
+							<label for="drop-3" class="toggle">Archive +</label>
+							<a href="#">Archive</a>
+							<input type="checkbox" id="drop-3">
+							<ul>
+								<li><a href="">Pace</a></li>
+								<li><a href="">Election</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<!-- First Tier Drop Down -->
+					<label for="drop-1" class="toggle">TV Series +</label>
+					<a href="#">TV Series</a>
+					<input type="checkbox" id="drop-1">
+					<ul>
+						<li><a href="#">To The</a></li>
+						<li><a href="#">Channel</a></li>
+						<li><a href="#">Already</a></li>
+					</ul>	
+				</li>
+
+				<li class="item"><a href="#">Lates Shows</a></li>
+				<li class="item"><a href="#">Scheduel</a></li>
+				<li class="item"><a href="#">About As</a></li>
+			</ul>
+		</div>
+	</nav>
+</body>
+</html>

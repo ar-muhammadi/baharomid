@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1TVNews.af</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".toggle").on("click", function() {
+				if ($(".item").hasClass("active")) {
+					$(".item").removeClass("active");
+				}
+				else {
+					$(".item").addClass("active");
+				}
+			});
+		});
+
+		// Mobile full backgrund
+		$(function() {
+
+			$(".toggle").on("click", function() {
+				if ($(".toggle").hasClass("active")) {
+					$(".toggle").removeClass("active");
+				}
+				else {
+					$(".toggle").addClass("active");
+				}
+			});
+		});
+	</script>
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		nav {
+			background-color: #B40000;
+			/*height: 40px;*/
+			margin-bottom: 0;
+		}
+		img {
+			float: left;
+				width: 40px;
+				height: 42px;
+				margin-top: -5px;
+			}
+		img.logo {
+				margin: 3px 0 0 5%;
+				padding-top: 3px;
+				padding-bottom: 0;
+			}
+		nav ul li {
+				display: inline-block;
+				padding: 15px 10px;
+			}
+		nav ul li:hover {
+			background-color: black;
+		}
+		nav ul li a {
+			color: white;
+			text-decoration: none;
+		}
+
+		/* Mobile Menu */
+		@media all and (max-width: 786px) {
+			nav {
+				height: 100%;
+				background-color: #b40000;
+			}
+			.toggle {
+				margin: 0 2% 0 0;
+			}
+			.toggle {
+				width: 40px;
+				height: 40px;
+				margin-top: 5px;
+				float: right;
+				cursor: pointer;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.bars {
+				float: right;
+				background: white;
+				display: inline-block;
+				height: 2px;
+				width: 18px;
+				position: relative;
+				box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+			}
+			.bars::before {
+				content: "";
+				background: white;
+				display: block;
+				height: 2px;
+				width: 18px;
+				position: absolute;
+				top: -7px;
+				left: 0;
+				box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+				transition-property: top, transform;
+				transition-delay: 0s, 0s;
+				transition-duration: 0.5s, 0.5s;
+			}
+			.bars::after {
+				content: "";
+				background: white;
+				display: block;
+				height: 2px;
+				width: 18px;
+				position: absolute;
+				top: 7px;
+				left: 0;
+				box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+				transition-property: top, transform;
+				transition-delay: 0s, 0s;
+				transition-duration: 0.5s, 0.5s;
+			}
+			.toggle.active .bars::before {
+				top: 0;
+				transform: rotate(45deg);
+			}
+			.toggle.active .bars::after {
+				top: 0;
+				transform: rotate(-45deg);
+			}
+			.toggle.active .bars {
+				background: transparent;
+				box-shadow: 0 2px 2px rgba(0, 0, 0, 0);
+			}
+			img.logo {
+				float: none;
+			}
+			ul.menu {
+				/*padding: 0 0 0 5%;*/
+				list-style-type: none;
+			}
+			.menu li{
+				padding: 15px 0;
+				/*moble*/
+				display: none;
+			}
+			.menu li.active {
+				display: block;
+			}
+			.menu li a {
+				padding-left: 5%;
+				text-decoration: none;
+				display: block;
+			}
+			.menu li:hover {
+				background-color: black;
+			}
+
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<img src="1tvlogo.png" alt="logo" class="logo">
+			<div class="toggle">
+				<span class="bars"></span>
+			</div>
+			<ul class="menu">
+				<li class="item"><a href="#">HOME</a></li>
+				<li class="item"><a href="#">AFGHANISTAN</a></li>
+				<li class="item"><a href="#">WORLD</a></li>
+				<li class="item"><a href="#">SPORT</a></li>
+				<li class="item"><a href="#">LATEST SHOWS</a></li>
+				<li class="item"><a href="#">ABOUT AS</a></li>
+				<li class="item"><a href="#">CONTACT AS</a></li>
+			</ul>
+		</nav>
+	</header>
+</body>
+</html>
